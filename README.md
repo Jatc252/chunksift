@@ -1,4 +1,4 @@
-# chunksift, a Minecraft Data Visualisation Tool
+# chunksift, a Minecraft Block Distribution Tool
 > Forked from [0xTiger/blockheights](https://github.com/0xTiger/blockheights)
 
 This script scrapes block distribution data from Minecraft (Java Edition) worlds by walking through each region and chunk in the Anvil file format.
