@@ -9,7 +9,7 @@ from matplotlib.offsetbox import AnnotationBbox, OffsetImage
 dat = lambda x: [v.get(x, 0) for v in layers.values()]
 merge_dicts = lambda dicts: sum((Counter(d) for d in dicts), Counter())
 
-cache_file = 'dataset.json'
+cache_file = 'out.json'
 
 with open(cache_file) as f:
     layers = json.load(f)['layers']
@@ -42,8 +42,8 @@ def animate(i):
     type = blocktypes[i]
 
     ax2.clear()
-    ax2.plot(range(256), type['data'], label=type['id'], color='k')#, color=ore['color'])
-    ax2.fill_between(range(256), type['data'], color='k')
+    ax2.plot(range(-64, 320), type['data'], label=type['id'], color='k')#, color=ore['color'])
+    ax2.fill_between(range(-64, 320), type['data'], color='k')
     ax2.legend()
 
     try:
