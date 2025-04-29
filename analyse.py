@@ -3,7 +3,7 @@ import csv
 from collections import defaultdict
 
 # Load data from dataset.json
-with open('out.json', 'r') as file:
+with open('dataset.json', 'r') as file:
     data = json.load(file)
 
 # Dictionary to store ore occurrences by layer
@@ -16,6 +16,9 @@ for layer, blocks in data["layers"].items():
     for block_name, count in blocks.items():
         total_blocks += count  # Sum all blocks
         if "_ore" in block_name:
+            ore_data[block_name][int(layer)] = count
+            total_ores += count
+        if "debris" in block_name:
             ore_data[block_name][int(layer)] = count
             total_ores += count
 
